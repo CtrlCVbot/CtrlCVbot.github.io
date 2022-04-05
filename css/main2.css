@@ -1,0 +1,24 @@
+
+/*하단에 있을수록 우선순위!*/
+/*tag < class < id < style="" 순으로 우선순위가 높습니다.*/
+/*!important가 붙은 스타일은 최우선으로 적용됩니다.*/
+.shop-item {
+  background : red;
+}
+
+.shop-item {
+  background : blue;
+}
+
+
+/*tag(1점) < class(10점) < div.container .shop-item(21점) < id(100점) < style=""(1000점) 순으로 우선순위가 높습니다.*/
+/*(21점)*/
+div.container .shop-item {
+  background : yellow;
+}
+/*22점*/
+div.container div.shop-item {
+  color : green;
+}
+
+

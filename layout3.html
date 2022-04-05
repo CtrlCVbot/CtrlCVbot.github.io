@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="HTML 강의">
+    <meta name="keywords" content="HTML,CSS,JavaScript,자바스크립트,코딩">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:image" content="/이미지경로.jpg">
+    <meta property="og:description" content="사이트설명">
+    <meta property="og:title" content="사이트제목">
+
+    <!--반응형 웹을 만들 때 head 태그에 들어가야할 내용, 모바일에서도 예쁜 레이아웃-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>레이아웃</title>
+    <!--호환성 이슈 해경 css-->
+    <!--https://github.com/necolas/normalize.css/blob/master/normalize.css-->
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel="stylesheet" href="css/main.css">
+    <!--<link>를 하단에 사용할 수록 하단에 작성한 것과 똑같은 효과이기 때문에
+main.css와 main2.css에 같은 class 명이 있더라도
+main2.css에 있는 클래스 명을 우선적으로 적용합니다. -->
+    <link rel="stylesheet" href="css/main2.css">
+
+    <link rel="icon" href="아이콘경로.ico" type="image/x-icon">
+
+    <!--[if lt IE 10] 이렇게 바꾸면 익스플로러 10 미만에서만 적용-->
+    <!--[if lt IE 9]>
+      <link rel="stylesheet" type="text/css" href="css/ie.css" />
+    <![endif]-->
+
+    <!--font awesome 링크! 장점: 간편함, 단점 : 불안정-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<!--<body sytle="margin: 0px">-->
+
+<body>
+
+    <!--flex박스 가로,세로배치-->
+    <div class="flex-container">
+        <!--flex-grow 박스크기를 비율로 설정 가능-->
+        <div class="flex-item" style="flex-grow: 1">1</div>
+        <div class="flex-item" style="flex-grow: 2">2</div>
+        <!--2배-->
+        <div class="flex-item">3</div>
+    </div>
+
+    <!--flex박스 가로,세로배치-->
+    <div class="flex-container2">
+        <!--flex-grow 박스크기를 비율로 설정 가능-->
+        <div class="flex-item2">
+            <h1 class="main-title2">Logo</h1>
+        </div>
+        <div class="flex-item2" style="flex-grow: 1"></div>
+        <div class="flex-item2">
+            <h2 class="main-product2">products </h2>
+        </div>
+        <div class="flex-item2">
+            <h2 class="main-product2">services</h2>
+        </div>
+        <!--2배-->
+    </div>
+
+
+    <!--pseudo-element-->
+    <!--내부 일부만 스타일주고 싶을때-->
+    <input type="file" class="input-file">
+
+    <!--!!!shadow dom-->
+    <!--input -> input, span 두개 tag가 포함됨.-->
+    <!--크롬 F12 설정에서 'Show user agent shadow DOM' 체크하면 보임 -->
+    <!--style="color: red; 는 input이 아니라 span에 적용됨! -->
+    <input type="file" style="color: red;">
+    <style>
+        /*크롬 pseudo="-webkit-file-upload-button"에서 확인할수있음*/
+        /*-webkit-은 크롬, 사파리, Edge에서만 적용되는 스타일*/
+        /*--moz-은 Firefox에서만 적용되는 스타일*/
+        /*--ms-은 Explorer에서만 적용되는 스타일*/
+        input[type=file]::-webkit-file-upload-button {
+            background: skyblue;
+            border: none;
+        }
+    </style>
+    <input placeholder="플레이스홀더">
+    <style>
+        /*크롬 pseudo="-webkit-input-placeholder"에서 확인할수있음*/
+        input::-webkit-input-placeholder {
+            color: red;
+        }
+    </style>
+    <!--style="color: red;" 적용안됨!-->
+    <input type="range" style="color: red;">
+    <!--크롬 user agent sylesheet-->
+    <style>
+        input[type="range" i]::-webkit-slider-thumb {
+            appearance: none;
+            background: red;
+            width: 50px;
+            
+        }
+    </style>
+
+    <!--라벨 input 방식!-->
+    <label for="input-file">라벨인풋파일</label>
+    <input type="file" style="color: red; display: none;" id="input-file">
+
+
+    <!--반응형 레이아웃-->
+    <div class="explain-container">
+        <div class="explain-item">
+            <!--fontawesome icon-->
+            <!--fa-3x: 3배의 아이콘-->
+            <i class="fa-solid fa-cart-shopping fa-3x"></i>
+            <h4>제목1</h4>
+            <p>내용1</p>
+        </div>
+        <div class="explain-item">
+            <i class="fa-solid fa-earth-americas fa-3x"></i>
+            <h4>제목2</h4>
+            <p>내용2</p>
+        </div>
+        <div class="explain-item">
+            <i class="fa-solid fa-user fa-3x"></i>
+            <h4>제목3</h4>
+            <p>내용3</p>
+        </div>
+        <div class="explain-item">
+            <i class="fa-solid fa-shirt fa-3x"></i>
+            <h4>제목4</h4>
+            <p>내용4</p>
+        </div>
+        <!--.explain-container::after 로 하단 <div> 주석처리!-->
+        <!--<div style="float : none; clear : both"></div>-->
+    </div>
+
+    <!--애니메이션-->
+    <div class="shop-bg">
+        <div class="shop-container">
+            <div class="shop-item">
+                <div sytle="posiotn: relative">
+                    <div class="overlay"></div>
+                    <img src="img/product1-1.jpg">
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="img/product2.jpg">
+            </div>
+            <div class="shop-item">
+                <img src="img/product3.jpg">
+            </div>
+        </div>
+    </div>
+
+    <!--애니메이션-->
+    <div class="shop-bg">
+        <div class="shop-container">
+            <div class="shop-item">
+                <div class="position: relative">
+                    <div class="overlay-wrap">
+                        <div class="overlay2">
+                            <span>$60</span>
+                        </div>
+                    </div>
+                    <img src="img/product1-1.jpg">
+                </div>
+            </div>
+            <div class="shop-item">
+                <div class="position: relative">
+                    <div class="overlay-wrap">
+                        <div class="overlay2">
+                            <span>$60</span>
+                        </div>
+                    </div>
+                    <img src="img/product2.jpg">
+                </div>
+            </div>
+            <div class="shop-item">
+                <div class="position: relative">
+                    <div class="overlay-wrap">
+                        <div class="overlay2">
+                            <span>$60</span>
+                        </div>
+                    </div>
+                    <img src="img/product3.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-background">
+        <h4 class="main-title">Buy our shoes! Now on Sales</h4>
+        <p class="main-contents">Featuring BAPESTA x KAWS FS-029 Chompers From Nigo's Personal Collection
+
+            Type: package
+            CATEGORY:DEADHEADS ONLY
+            Collectible T-Shirts From the Grateful Dead
+        </p>
+        <button class="main-button">구매하기</button>
+
+        <div class="main-footer">
+            <h4 class="main-title">how ew diekjfkd dous djdkjfs</h4>
+            <p class="pseudo">Featuring BAPESTA x KAWS FS-029 Chompers From Nigo's Personal Collection
+
+                Type: package
+                CATEGORY:DEADHEADS ONLY
+                Collectible T-Shirts From the Grateful Dead
+            </p>
+        </div>
+
+        <!--width는 only content 폭! padding, borders는 따로 추가되는 거임!-->
+        <div class="main-footer2" style="padding: 50px">
+            <h4 class="main-title">how ew diekjfkd dous djdkjfs</h4>
+            <p class="main-contents">sFeaturing BAPESTA x KAWS FS-029 Chompers From Nigo's Personal Collection
+
+                Type: package
+                CATEGORY:DEADHEADS ONLY
+                Collectible T-Shirts From the Grateful Dead
+            </p>
+        </div>
+        <br />
+        <br />
+        <form>
+            <!--name 서버개발시 필요!-->
+            <input type="text" placeholder="testtest" name="age" class="text-input">
+            <input type="email">
+            <input type="password">
+            <input type="radio">
+            <input type="file">
+            <input type="checkbox">
+            <input type="submit">
+            <!--<button type="submit">정송</button>-->
+            <select>
+                <option>옵션1</option>
+            </select>
+            <textarea>sdfsdf</textarea>
+        </form>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br />
+
+    <div class="form-background">
+        <div class="form-white">
+            <h3>Contact Us</h3>
+
+            <div class="w-100">
+                <p>Your Email</p>
+                <input class="form-input">
+            </div>
+            <div class="w-50">
+                <p>First Name</p>
+                <input class="form-input">
+            </div>
+            <div class="w-50">
+                <p>Last Name</p>
+                <input class="form-input">
+            </div>
+            <div class="w-100">
+                <p>Message</p>
+                <textarea class="form-input"></textarea>
+            </div>
+            <div class="w-100">
+                <!--id와 for 이름 맞춰 input과 label 연동!-->
+                <input type="checkbox" id="subscribe">
+                <label for="subscribe">누르기</label>
+                <button class="yellow-button" type="submit">전송</button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+</body></html>

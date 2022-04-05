@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <titl>Document</titl>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+    <div>
+        <!--표만들땐 테이블 tr==row, td=column-->
+        <table>
+            <!--제목-->
+          <thead></thead>
+            <!--내용-->
+          <tbody>
+            <tr>
+              <th><p>1111</p><p>0000</p></th>
+              <td style="vertical-align: top">2</td>
+              <td style="vertical-align: bottom">3</td>
+            </tr>
+            <tr>
+              <th>1</th>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    
+    <div>
+        <p>
+          <span style="font-size : 50px">Greetings</span>   
+          <span style="font-size : 20px; vertical-align: top">top</span>
+          <span style="font-size : 20px; vertical-align: bottom">bottom</span>
+          <span style="font-size : 20px; vertical-align: sub">sub</span>
+        </p>
+    </div>
+    <div> 
+        <img src="https://mdn.mozillademos.org/files/12245/frame_image.svg"     width="32" height="32" 
+            style="font-size : 20px; vertical-align: middle"> 
+            image with a default alignment.
+    </div>
+    
+    <!--display: inline 항상 옆으로 채워지는 폭과 너비가 없는 요소-->
+    <div style="display: table">
+        <div style="display: table-row">
+            <div style="display: table-cell">
+            </div>
+            <div style="display: table-cell">
+            </div>
+        </div>        
+    </div>
+    
+    <div class="cart-background">        
+        <h3>Your shopping cart</h3>
+        <table class="cart-table">            
+          <thead></thead>  
+            <tr>
+              <td ></td>
+              <!--<td class="cell-long">Item</td>-->
+              <td>Item</td>
+              <td >Amount</td>
+              <td >Price</td>
+              <td >Total</td>
+            </tr>
+          <tbody>
+            <tr>
+              <td ><img src="../img/item1.png" width="50px"></td>
+              <td >Item</td>
+              <td >Amount</td>
+              <td >Price</td>
+              <td >Total</td>
+            </tr>
+            <tr>
+              <td ><img src="../img/item1.png" width="50px"></td>
+              <td >Item</td>
+              <td >Amount</td>
+              <td >Price</td>
+              <td >Total</td>
+            </tr>
+            <tr>            
+                <!--cell5개 합치기!-->
+              <td colspan="5" style="text-align: right">총가격: 70000</td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn">
+            구매하기
+        </button>
+        <input class="input-test">
+        <a href="layout1.html" class="custom-link">layout1 링크</a>
+    </div>
+    
+    <div>
+        <button class="btn-red">레드</button>
+        <button class="btn-blue">블루</button>
+    </div>
+    
+    <!--OOCSS 작명-->
+    <div>
+        <button class="main-btn bg-red">레드</button>
+        <button class="main-btn bg-blue">블루</button>
+    </div>
+    
+    <!--BEM 작명 잘 안씀-->
+    <!--class="profille"로 우선 작명 정함!-->    
+    <div class="profile">
+      <!--class="profile__img" '__'다음 '역할'하는지 작명-->
+      <img class="profile__img">
+      <h4 class="profile__title">이름</h4>
+      <p class="profile__content">소개글</p>
+        <!--class="profile__button--red" '--'다음 '세부특징'하는지 작명-->
+      <button class="profile__button--red">빨간버튼</button>
+      <button class="profile__button--blue">파란버튼</button>    
+    </div>
+    
+</body>
+</html>
